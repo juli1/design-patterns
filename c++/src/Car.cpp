@@ -8,3 +8,7 @@ Car::Car()
 CarTesla::CarTesla ()
 {
 }
+
+CarToyota::CarToyota ()
+{
+}

@@ -13,5 +13,11 @@ class CarTesla : public Car
      CarTesla ();
 };
 
+class CarToyota : public Car
+{
+   public:
+      CarToyota ();
+};
+
 #endif
 
