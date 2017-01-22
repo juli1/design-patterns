@@ -3,7 +3,7 @@ CPPFLAGS=-Wall -std=c++11 -g -Wextra -Wshadow -Wold-style-cast -Wcast-align -Wun
 INCLUDE=include
 BINARY=bin/patterns
 CPP=/usr/bin/g++
-SRCS=src/Car.cpp src/Singleton.cpp src/Factory.cpp
+SRCS=src/Car.cpp src/Singleton.cpp src/Factory.cpp src/Builder.cpp
 
 all:
 	$(CPP) -o $(BINARY) -I$(INCLUDE) $(CPPFLAGS) tests/main.cpp $(SRCS)

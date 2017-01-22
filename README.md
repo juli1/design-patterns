@@ -3,6 +3,11 @@ Implementation of design patterns with different languages.
 You can find an implementation of design patterns
 using C++ and Java.
 
+The following patterns are demonstrated:
+ - Singleton
+ - Factory
+ - Builder
+
 ## General
 We start with a basic example with a Car and a Garage.
 The garage can contain multiple cars. We have an implementation
