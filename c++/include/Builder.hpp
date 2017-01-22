@@ -1,7 +1,7 @@
 #ifndef __BUILDER_HPP__
 #define __BUILDER_HPP__
 
-#include "Car.hpp"
+#include "model/Car.hpp"
 
 class Builder
 {

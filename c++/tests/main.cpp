@@ -1,8 +1,8 @@
 #include <iostream>
-#include "Car.hpp"
 #include "Singleton.hpp"
 #include "Factory.hpp"
 #include "Builder.hpp"
+#include "Adapter.hpp"
 
 using namespace std;
 
@@ -39,4 +39,13 @@ int main (int argc __attribute__((unused)), char** argv __attribute__((unused)))
 	Car* teslaCar = teslaBuilder.getCar();
 	cout << "Tesla car" << teslaCar << endl;
 	delete teslaCar;
+
+
+	/**
+	 * Use of Adapter
+	 */
+	Adapter dviToHdmi;
+	std::string adapterOutput = dviToHdmi.sendHdmiSignal();
+	cout << adapterOutput << endl;
+
 }
