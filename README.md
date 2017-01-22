@@ -7,6 +7,8 @@ The following patterns are demonstrated:
  - Singleton
  - Factory
  - Builder
+ - Composite
+ - Adapter
 
 ## General
 We start with a basic example with a Car and a Garage.
