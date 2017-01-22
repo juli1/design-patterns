@@ -1,8 +1,12 @@
 #include <iostream>
+
 #include "Singleton.hpp"
 #include "Factory.hpp"
 #include "Builder.hpp"
 #include "Adapter.hpp"
+#include "Composite.hpp"
+
+#include "model/SoundSystem.hpp"
 
 using namespace std;
 
@@ -34,11 +38,9 @@ int main (int argc __attribute__((unused)), char** argv __attribute__((unused)))
 
 	Car* toyotaCar = toyotaBuilder.getCar();
 	cout << "Toyota car" << toyotaCar << endl;
-	delete toyotaCar;
 
 	Car* teslaCar = teslaBuilder.getCar();
 	cout << "Tesla car" << teslaCar << endl;
-	delete teslaCar;
 
 
 	/**
@@ -48,4 +50,17 @@ int main (int argc __attribute__((unused)), char** argv __attribute__((unused)))
 	std::string adapterOutput = dviToHdmi.sendHdmiSignal();
 	cout << adapterOutput << endl;
 
+	/**
+	 * Use of composite
+	 */
+	SoundSystem soundSystem;
+	toyotaCar->addElement (&soundSystem);
+	soundSystem.addElement (new Speaker());
+	soundSystem.addElement (new Speaker());
+	soundSystem.addElement (new Stereo());
+
+	cout << "Price of the car (with only stereo) " << toyotaCar->getPrice() << endl;
+
+	delete toyotaCar;
+	delete teslaCar;
 }

@@ -12,3 +12,13 @@ CarTesla::CarTesla ()
 CarToyota::CarToyota ()
 {
 }
+
+CarToyota::~CarToyota ()
+{
+}
+
+Car::~Car ()
+{
+}
+
+
