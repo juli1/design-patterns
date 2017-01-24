@@ -21,4 +21,20 @@ Car::~Car ()
 {
 }
 
+std::string Car::showCar ()
+{
+	return " UNKNOWN ";
+}
+
+std::string CarToyota::showCar ()
+{
+	return " TOYOTA ";
+}
+
+std::string CarTesla::showCar ()
+{
+	return " TOYOTA ";
+}
+
+
 

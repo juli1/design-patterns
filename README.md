@@ -9,6 +9,8 @@ The following patterns are demonstrated:
  - Builder
  - Composite
  - Adapter
+ - Decorator
+ - Facade
 
 ## General
 We start with a basic example with a Car and a Garage.

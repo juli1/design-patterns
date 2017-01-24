@@ -5,8 +5,12 @@
 #include "Builder.hpp"
 #include "Adapter.hpp"
 #include "Composite.hpp"
+#include "Decorator.hpp"
+#include "Facade.hpp"
+#include "Bridge.hpp"
 
 #include "model/SoundSystem.hpp"
+#include "model/Key.hpp"
 
 using namespace std;
 
@@ -61,6 +65,26 @@ int main (int argc __attribute__((unused)), char** argv __attribute__((unused)))
 
 	cout << "Price of the car (with only stereo) " << toyotaCar->getPrice() << endl;
 
+	/**
+	 * Decorator
+	 */
+	FancyDecorator fd(toyotaCar, "**");
+	cout << fd.showCar() << std::endl;
+
+	/**
+	 * Facade
+	 */
+	FacadeDriving facade;
+	facade.startTrip();
+
 	delete toyotaCar;
 	delete teslaCar;
+
+
+	// Use the Bridge now
+	ToyotaKey toyotaKey;
+	toyotaKey.openCar();
+
+	TeslaKey teslaKey;
+	teslaKey.openCar();
 }
