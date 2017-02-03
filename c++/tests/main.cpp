@@ -8,6 +8,7 @@
 #include "Decorator.hpp"
 #include "Facade.hpp"
 #include "Bridge.hpp"
+#include "ChainOfResponsibility.hpp"
 
 #include "model/SoundSystem.hpp"
 #include "model/Key.hpp"
@@ -87,4 +88,12 @@ int main (int argc __attribute__((unused)), char** argv __attribute__((unused)))
 
 	TeslaKey teslaKey;
 	teslaKey.openCar();
+
+   // Use Chain Of Reponsibility
+   CarStartingRemotely* carRemote = new CarStartingRemotely(NULL);
+   KeyReceiverStarter* keyReceiver = new KeyReceiverStarter(carRemote);
+   KeyRemoteStarter* keyRemote = new KeyRemoteStarter (keyReceiver);
+
+   keyRemote->startCar();
+     
 }
