@@ -6,7 +6,8 @@ CPP=/usr/bin/g++
 SRCS=src/model/Car.cpp src/model/DVI.cpp src/model/HDMI.cpp src/model/SoundSystem.cpp \
      src/model/Brake.cpp src/model/Engine.cpp src/model/Key.cpp \
      src/Singleton.cpp src/Factory.cpp src/Builder.cpp src/Adapter.cpp src/Composite.cpp \
-	  src/Decorator.cpp src/Facade.cpp src/Bridge.cpp src/ChainOfResponsibility.cpp
+	  src/Decorator.cpp src/Facade.cpp src/Bridge.cpp src/ChainOfResponsibility.cpp \
+	  src/Command.cpp
 
 all:
 	$(CPP) -o $(BINARY) -I$(INCLUDE) $(CPPFLAGS) tests/main.cpp $(SRCS)

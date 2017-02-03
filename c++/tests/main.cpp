@@ -8,6 +8,7 @@
 #include "Decorator.hpp"
 #include "Facade.hpp"
 #include "Bridge.hpp"
+#include "Command.hpp"
 #include "ChainOfResponsibility.hpp"
 
 #include "model/SoundSystem.hpp"
@@ -95,5 +96,13 @@ int main (int argc __attribute__((unused)), char** argv __attribute__((unused)))
    KeyRemoteStarter* keyRemote = new KeyRemoteStarter (keyReceiver);
 
    keyRemote->startCar();
-     
+   
+
+   //Command
+   Client myClient;
+   Receiver myReceiver;
+   Invoker myInvoker;
+   myClient.createCommand (myReceiver, myInvoker);
+   myInvoker.run();
 }
+
