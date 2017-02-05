@@ -11,6 +11,11 @@ The following patterns are demonstrated:
  - Adapter
  - Decorator
  - Facade
+ - Observer
+ - Mediator
+ - Chain of Responsibility
+ - Command
+ - Bridge
 
 ## General
 We start with a basic example with a Car and a Garage.

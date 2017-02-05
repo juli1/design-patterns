@@ -10,6 +10,8 @@
 #include "Bridge.hpp"
 #include "Command.hpp"
 #include "ChainOfResponsibility.hpp"
+#include "Mediator.hpp"
+#include "Observer.hpp"
 
 #include "model/SoundSystem.hpp"
 #include "model/Key.hpp"
@@ -104,5 +106,39 @@ int main (int argc __attribute__((unused)), char** argv __attribute__((unused)))
    Invoker myInvoker;
    myClient.createCommand (myReceiver, myInvoker);
    myInvoker.run();
+
+   //Mediator
+   Supplier supplier1(10, 100);
+   Supplier supplier2(5, 50);
+
+   Mediator mediator;
+   mediator.addSupplier (&supplier1);
+   mediator.addSupplier (&supplier2);
+
+   OEM oem1 (mediator, 10);
+   oem1.negotiate();
+
+   OEM oem2 (mediator, 5);
+   oem2.negotiate();
+
+   //Observer
+   GasStation station1;
+   GasStation station2;
+   GasStation station3;
+   PriceObserver po1;
+   PriceObserver po2;
+
+   station1.addObserver (&po1);
+   station2.addObserver (&po1);
+
+   station2.addObserver (&po2);
+   station3.addObserver (&po2);
+
+   station1.updatePrice (30);
+   station2.updatePrice (50);
+   station3.updatePrice (10);
+
+   cout << "Min price observer1 = " << po1.getMinPrice() << endl;
+   cout << "Min price observer2 = " << po2.getMinPrice() << endl;
 }
 
