@@ -16,6 +16,7 @@ The following patterns are demonstrated:
  - Chain of Responsibility
  - Command
  - Bridge
+ - State
 
 ## General
 We start with a basic example with a Car and a Garage.
