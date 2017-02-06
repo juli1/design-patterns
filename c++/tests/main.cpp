@@ -14,8 +14,10 @@
 #include "Observer.hpp"
 #include "State.hpp"
 #include "Template.hpp"
+#include "Visitor.hpp"
 
 #include "model/SoundSystem.hpp"
+#include "model/Html.hpp"
 #include "model/Key.hpp"
 
 using namespace std;
@@ -157,5 +159,21 @@ int main (int argc __attribute__((unused)), char** argv __attribute__((unused)))
 	QuietAlarm qa;
 	na.alarm();
 	qa.alarm();
+
+	// Visitor
+	Head* head = new Head();
+	head->setTitle (new Title ("hello"));
+	Body* body = new Body();
+	body->addHtmlElement (new P("Hello, world"));
+	body->addHtmlElement (new P("Hello, world2"));
+	Document* d = new Document (head, body);
+
+	PrinterVisitor pv;
+	pv.visit (d);
+	cout << "HTML version:\n" << pv.getText() << endl;
+
+	TextOnlyVisitor tov;
+	tov.visit (d);
+	cout << "Text version:\n" << tov.getText() << endl;
 }
 

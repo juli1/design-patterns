@@ -18,6 +18,7 @@ The following patterns are demonstrated:
  - Bridge
  - State
  - Template
+ - Visitor
 
 ## General
 We start with a basic example with a Car and a Garage.
