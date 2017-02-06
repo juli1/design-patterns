@@ -17,6 +17,7 @@ The following patterns are demonstrated:
  - Command
  - Bridge
  - State
+ - Template
 
 ## General
 We start with a basic example with a Car and a Garage.

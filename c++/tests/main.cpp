@@ -13,6 +13,7 @@
 #include "Mediator.hpp"
 #include "Observer.hpp"
 #include "State.hpp"
+#include "Template.hpp"
 
 #include "model/SoundSystem.hpp"
 #include "model/Key.hpp"
@@ -142,6 +143,7 @@ int main (int argc __attribute__((unused)), char** argv __attribute__((unused)))
    cout << "Min price observer1 = " << po1.getMinPrice() << endl;
    cout << "Min price observer2 = " << po2.getMinPrice() << endl;
 
+	// State
    Person p;
    p.goToSleep();
    p.wakeUp();
@@ -149,5 +151,11 @@ int main (int argc __attribute__((unused)), char** argv __attribute__((unused)))
    p.work();
    p.drink();
    p.speak();
+
+	// Template
+	NoisyAlarm na;
+	QuietAlarm qa;
+	na.alarm();
+	qa.alarm();
 }
 
